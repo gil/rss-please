@@ -1,5 +1,7 @@
-import { load } from 'npm:cheerio';
-import { Feed } from 'npm:feed';
+import {
+  cheerio,
+  Feed,
+} from './deps.ts';
 
 export const handler = async (request: Request): Promise<Response> => {
   const url = new URL(request.url);
@@ -12,7 +14,7 @@ export const handler = async (request: Request): Promise<Response> => {
     const updatesUrl = `${ baseUrl }/site/${ site }?page=${ i }`;
     const page = await fetch(updatesUrl);
     const pageBody = await page.text();
-    const $ = load(pageBody);
+    const $ = cheerio.load(pageBody);
 
     const title = $('title').text();
     const link = $('.site-url a').attr('href') || updatesUrl;
