@@ -1,5 +1,6 @@
 import {
-  cheerio,
+  DOMParser,
+  Element,
   Feed,
 } from './deps.ts';
 
@@ -14,10 +15,12 @@ export const handler = async (request: Request): Promise<Response> => {
     const updatesUrl = `${ baseUrl }/site/${ site }?page=${ i }`;
     const page = await fetch(updatesUrl);
     const pageBody = await page.text();
-    const $ = cheerio.load(pageBody);
+    const document = new DOMParser().parseFromString(pageBody, 'text/html');
 
-    const title = $('title').text();
-    const link = $('.site-url a').attr('href') || updatesUrl;
+    if( !document ) continue;
+
+    const title = document.querySelector('title')?.innerText || '';
+    const link = document.querySelector('.site-url a')?.getAttribute('href') || updatesUrl;
 
     feed ??= new Feed({
       title,
@@ -27,24 +30,24 @@ export const handler = async (request: Request): Promise<Response> => {
       copyright: site || title,
     });
 
-    $('.news-item.update').each((_index, el) => {
-      const $update = $(el);
-      const $dateLink = $update.find('.date a');
-      const link = `${ baseUrl }/${ $dateLink.attr('href') || '' }`;
-      const date = ago( $dateLink.text().trim() );
+    document.querySelectorAll('.news-item.update').forEach(el => {
+      const $update = el as Element;
+      const $dateLink = $update.querySelector('.date a');
+      const link = `${ baseUrl }/${ $dateLink?.getAttribute('href') || '' }`;
+      const date = ago( $dateLink?.textContent.trim() || '' );
 
-      const content = $update.find('.content .file a').map((_index, el) => {
-        const $file = $(el);
+      const content = [...$update.querySelectorAll('.content .file a')].map(el => {
+        const $file = el as Element;
         return `
-        <h3>${ $file.find('.title').text().trim() }</h3>
-          <a href="${ $file.attr('href') }">
-          <img src="${ baseUrl }${ $file.find('img').attr('src') }" />
+        <h3>${ $file.querySelector('.title')?.innerText.trim() }</h3>
+          <a href="${ $file?.getAttribute('href') }">
+          <img src="${ baseUrl }${ $file?.querySelector('img')?.getAttribute('src') }" />
         </a>
         `;
-      }).toArray().join('');
+      }).join('');
 
       feed.addItem({
-        title: $update.find('.title .text').text().trim(),
+        title: $update.querySelector('.title .text')?.innerText.trim() || '',
         id: link,
         link: link,
         content,

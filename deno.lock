@@ -1,127 +1,38 @@
 {
   "version": "2",
   "remote": {
-    "https://deno.land/std@0.179.0/async/abortable.ts": "73acfb3ed7261ce0d930dbe89e43db8d34e017b063cf0eaa7d215477bf53442e",
-    "https://deno.land/std@0.179.0/async/deadline.ts": "c5facb0b404eede83e38bd2717ea8ab34faa2ffb20ef87fd261fcba32ba307aa",
-    "https://deno.land/std@0.179.0/async/debounce.ts": "adab11d04ca38d699444ac8a9d9856b4155e8dda2afd07ce78276c01ea5a4332",
-    "https://deno.land/std@0.179.0/async/deferred.ts": "42790112f36a75a57db4a96d33974a936deb7b04d25c6084a9fa8a49f135def8",
-    "https://deno.land/std@0.179.0/async/delay.ts": "73aa04cec034c84fc748c7be49bb15cac3dd43a57174bfdb7a4aec22c248f0dd",
-    "https://deno.land/std@0.179.0/async/mod.ts": "f04344fa21738e5ad6bea37a6bfffd57c617c2d372bb9f9dcfd118a1b622e576",
-    "https://deno.land/std@0.179.0/async/mux_async_iterator.ts": "70c7f2ee4e9466161350473ad61cac0b9f115cff4c552eaa7ef9d50c4cbb4cc9",
-    "https://deno.land/std@0.179.0/async/pool.ts": "fd082bd4aaf26445909889435a5c74334c017847842ec035739b4ae637ae8260",
-    "https://deno.land/std@0.179.0/async/retry.ts": "5efa3ba450ac0c07a40a82e2df296287b5013755d232049efd7ea2244f15b20f",
-    "https://deno.land/std@0.179.0/async/tee.ts": "47e42d35f622650b02234d43803d0383a89eb4387e1b83b5a40106d18ae36757",
-    "https://deno.land/std@0.179.0/http/server.ts": "cbb17b594651215ba95c01a395700684e569c165a567e4e04bba327f41197433"
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/build/deno-wasm/deno-wasm.js": "3fa41dba4813e6d4b024a53a146b76e1afcbdf218fc02063442378c61239ed14",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/deno-dom-wasm.ts": "bfd999a493a6974e9fca4d331bee03bfb68cfc600c662cd0b48b21d67a2a8ba0",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/api.ts": "0ff5790f0a3eeecb4e00b7d8fbfa319b165962cf6d0182a65ba90f158d74f7d7",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/constructor-lock.ts": "59714df7e0571ec7bd338903b1f396202771a6d4d7f55a452936bd0de9deb186",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/deserialize.ts": "f4d34514ca00473ca428b69ad437ba345925744b5d791cb9552e2d7a0e7b0439",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/document-fragment.ts": "a40c6e18dd0efcf749a31552c1c9a6f7fa614452245e86ee38fc92ba0235e5ae",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/document.ts": "b8f4e4ccabaaa063d6562a0f2f8dea9c0419515d63d8bd79bfde95f7cd64bd93",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/dom-parser.ts": "609097b426f8c2358f3e5d2bca55ed026cf26cdf86562e94130dfdb0f2537f92",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/element.ts": "4a267c24d0e20b70741a14ab371a7511a4f3db682d3a1d229adaa66a46445fff",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/elements/html-template-element.ts": "19ad97c55222115e8daaca2788b9c98cc31a7f9d2547ed5bca0c56a4a12bfec8",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/html-collection.ts": "ae90197f5270c32074926ad6cf30ee07d274d44596c7e413c354880cebce8565",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/node-list.ts": "4c6e4b4585301d4147addaccd90cb5f5a80e8d6290a1ba7058c5e3dfea16e15d",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/node.ts": "3069e6fc93ac4111a136ed68199d76673339842b9751610ba06f111ba7dc10a7",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/selectors/custom-api.ts": "852696bd58e534bc41bd3be9e2250b60b67cd95fd28ed16b1deff1d548531a71",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/selectors/nwsapi-types.ts": "c43b36c36acc5d32caabaa54fda8c9d239b2b0fcbce9a28efb93c84aa1021698",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/selectors/nwsapi.js": "985d7d8fc1eabbb88946b47a1c44c1b2d4aa79ff23c21424219f1528fa27a2ff",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/selectors/selectors.ts": "83eab57be2290fb48e3130533448c93c6c61239f2a2f3b85f1917f80ca0fdc75",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/selectors/sizzle-types.ts": "78149e2502409989ce861ed636b813b059e16bc267bb543e7c2b26ef43e4798b",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/selectors/sizzle.js": "c3aed60c1045a106d8e546ac2f85cc82e65f62d9af2f8f515210b9212286682a",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/utils-types.ts": "96db30e3e4a75b194201bb9fa30988215da7f91b380fca6a5143e51ece2a8436",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/dom/utils.ts": "ecd889ba74f3ce282620d8ca1d4d5e0365e6cc86101d2352f3bbf936ae496e2c",
+    "https://deno.land/x/deno_dom@v0.1.36-alpha/src/parser.ts": "b65eb7e673fa7ca611de871de109655f0aa9fa35ddc1de73df1a5fc2baafc332"
   },
   "npm": {
     "specifiers": {
-      "cheerio@1.0.0-rc.12": "cheerio@1.0.0-rc.12",
       "feed@4.2.2": "feed@4.2.2"
     },
     "packages": {
-      "boolbase@1.0.0": {
-        "integrity": "sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==",
-        "dependencies": {}
-      },
-      "cheerio-select@2.1.0": {
-        "integrity": "sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==",
-        "dependencies": {
-          "boolbase": "boolbase@1.0.0",
-          "css-select": "css-select@5.1.0",
-          "css-what": "css-what@6.1.0",
-          "domelementtype": "domelementtype@2.3.0",
-          "domhandler": "domhandler@5.0.3",
-          "domutils": "domutils@3.0.1"
-        }
-      },
-      "cheerio@1.0.0-rc.12": {
-        "integrity": "sha512-VqR8m68vM46BNnuZ5NtnGBKIE/DfN0cRIzg9n40EIq9NOv90ayxLBXA8fXC5gquFRGJSTRqBq25Jt2ECLR431Q==",
-        "dependencies": {
-          "cheerio-select": "cheerio-select@2.1.0",
-          "dom-serializer": "dom-serializer@2.0.0",
-          "domhandler": "domhandler@5.0.3",
-          "domutils": "domutils@3.0.1",
-          "htmlparser2": "htmlparser2@8.0.1",
-          "parse5": "parse5@7.1.2",
-          "parse5-htmlparser2-tree-adapter": "parse5-htmlparser2-tree-adapter@7.0.0"
-        }
-      },
-      "css-select@5.1.0": {
-        "integrity": "sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==",
-        "dependencies": {
-          "boolbase": "boolbase@1.0.0",
-          "css-what": "css-what@6.1.0",
-          "domhandler": "domhandler@5.0.3",
-          "domutils": "domutils@3.0.1",
-          "nth-check": "nth-check@2.1.1"
-        }
-      },
-      "css-what@6.1.0": {
-        "integrity": "sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==",
-        "dependencies": {}
-      },
-      "dom-serializer@2.0.0": {
-        "integrity": "sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==",
-        "dependencies": {
-          "domelementtype": "domelementtype@2.3.0",
-          "domhandler": "domhandler@5.0.3",
-          "entities": "entities@4.4.0"
-        }
-      },
-      "domelementtype@2.3.0": {
-        "integrity": "sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==",
-        "dependencies": {}
-      },
-      "domhandler@5.0.3": {
-        "integrity": "sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==",
-        "dependencies": {
-          "domelementtype": "domelementtype@2.3.0"
-        }
-      },
-      "domutils@3.0.1": {
-        "integrity": "sha512-z08c1l761iKhDFtfXO04C7kTdPBLi41zwOZl00WS8b5eiaebNpY00HKbztwBq+e3vyqWNwWF3mP9YLUeqIrF+Q==",
-        "dependencies": {
-          "dom-serializer": "dom-serializer@2.0.0",
-          "domelementtype": "domelementtype@2.3.0",
-          "domhandler": "domhandler@5.0.3"
-        }
-      },
-      "entities@4.4.0": {
-        "integrity": "sha512-oYp7156SP8LkeGD0GF85ad1X9Ai79WtRsZ2gxJqtBuzH+98YUV6jkHEKlZkMbcrjJjIVJNIDP/3WL9wQkoPbWA==",
-        "dependencies": {}
-      },
       "feed@4.2.2": {
         "integrity": "sha512-u5/sxGfiMfZNtJ3OvQpXcvotFpYkL0n9u9mM2vkui2nGo8b4wvDkJ8gAkYqbA8QpGyFCv3RK0Z+Iv+9veCS9bQ==",
         "dependencies": {
           "xml-js": "xml-js@1.6.11"
-        }
-      },
-      "htmlparser2@8.0.1": {
-        "integrity": "sha512-4lVbmc1diZC7GUJQtRQ5yBAeUCL1exyMwmForWkRLnwyzWBFxN633SALPMGYaWZvKe9j1pRZJpauvmxENSp/EA==",
-        "dependencies": {
-          "domelementtype": "domelementtype@2.3.0",
-          "domhandler": "domhandler@5.0.3",
-          "domutils": "domutils@3.0.1",
-          "entities": "entities@4.4.0"
-        }
-      },
-      "nth-check@2.1.1": {
-        "integrity": "sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==",
-        "dependencies": {
-          "boolbase": "boolbase@1.0.0"
-        }
-      },
-      "parse5-htmlparser2-tree-adapter@7.0.0": {
-        "integrity": "sha512-B77tOZrqqfUfnVcOrUvfdLbz4pu4RopLD/4vmu3HUPswwTA8OH0EMW9BlWR2B0RCoiZRAHEUu7IxeP1Pd1UU+g==",
-        "dependencies": {
-          "domhandler": "domhandler@5.0.3",
-          "parse5": "parse5@7.1.2"
-        }
-      },
-      "parse5@7.1.2": {
-        "integrity": "sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==",
-        "dependencies": {
-          "entities": "entities@4.4.0"
         }
       },
       "sax@1.2.4": {
