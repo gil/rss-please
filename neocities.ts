@@ -73,6 +73,7 @@ const dateMethods = {
   years: (d: Date, years: number) => d.setDate(d.getMonth() - years),
 }
 
+// TODO: Find a proper solution to this hack
 const ago = (relativeDate: string) => {
   const d = new Date();
   let [_, howmany, scale] = relativeDate.match(/(\d+) (\w+)\b/) || [];
